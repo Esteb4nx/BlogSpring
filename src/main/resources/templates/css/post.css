@@ -1,0 +1,14 @@
+.options-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.options-container button{
+    margin: 0 6px;
+}
+
+.body-container{
+    padding: 12px;
+    margin: 6px 0;
+}
