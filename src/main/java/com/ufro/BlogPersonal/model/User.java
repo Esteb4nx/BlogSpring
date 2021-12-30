@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -15,8 +15,23 @@ public class User {
     @Column(name = "password", nullable = false, length = 70)
     private String password;
 
-    @Column(name = "profile_picture")
+    // Nota: columnDefiniton necesario ya que hibernate define automáticamente String como varchar(255)
+    @Column(name = "profile_picture", columnDefinition="TEXT")
     private String profilePicture;
+
+    public User() {
+    }
+
+    public User(Long id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public String getProfilePicture() {
         return profilePicture;
