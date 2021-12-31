@@ -1,14 +1,21 @@
 .options-container{
-    width: 100%;
+    width: 800px;
     display: flex;
     justify-content: flex-end;
     
 }
 .options-container button{
-    margin: 0 6px;
+    margin: 12px 6px;
+}
+.post-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
 }
 
 .body-container{
     padding: 12px;
     margin: 6px 0;
+    max-width: 800px;
 }
