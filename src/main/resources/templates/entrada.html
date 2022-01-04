@@ -39,8 +39,10 @@
 
     <main class="main-container">
         <div class="options-container">
-            <button class="btn btn-primary">Eliminar</button>
-            <a th:href="@{/editar(id=1)}">
+            <a th:href="@{/entry/delete(id=${post.getId()})}">
+                <button class="btn btn-primary">Eliminar</button>
+            </a>
+            <a th:href="@{/entry/edit(id=${post.getId()})}">
                 <button class="btn btn-primary">Editar entrada</button>
             </a>
         </div>

@@ -10,9 +10,7 @@ import com.ufro.BlogPersonal.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -24,7 +22,7 @@ public class EntryController {
     private PostRepository postRepository;
 
     @GetMapping
-    public String entry(@RequestParam(value = "id") Long id, Model model) {
+    public String main(@RequestParam(value = "id") Long id, Model model) {
         // Ya que consultamos directo a CrudRepository obtenemos un Optional<T>
         Optional<Post> post = postRepository.findById(id);
 
@@ -33,5 +31,17 @@ public class EntryController {
         return "entrada";
     }
 
+    @GetMapping("/edit")
+    public String edit(@RequestParam(value = "id") Long id, Model model) {
+        Optional<Post> post = postRepository.findById(id);
+        model.addAttribute("post", post.orElseThrow());
+        return "editar-entrada";
+    }
+
+    @PostMapping("/save")
+    public String save(@ModelAttribute Post post){
+        postRepository.save(post);
+        return "redirect:/entry?id=" + post.getId();
+    }
 
 }

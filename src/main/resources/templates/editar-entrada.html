@@ -17,7 +17,6 @@
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
-                placeholder: 'Escribe aquí tu publicación',
                 tabsize: 2,
                 height: 300,
                 maxHeigth: 300,
@@ -59,14 +58,16 @@
 
     <main class="main-container">
         <h1>Editar Entrada</h1>
-
         <div class="form-container">
-            <form class="form" action="" method="post">
-                <label for="title">Titulo de la entrada:</label>
-                <input required name="title" id="title" class="form-control" type="text" value="Titulo entrada">
-                <textarea required id="summernote" name="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacinia quis vel eros donec ac odio tempor. Lacus sed viverra tellus in hac habitasse platea dictumst. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Dapibus ultrices in iaculis nunc sed augue lacus. Lorem sed risus ultricies tristique nulla aliquet enim. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Cras semper auctor neque vitae. Netus et malesuada fames ac turpis egestas sed. Mi quis hendrerit dolor magna eget est lorem ipsum dolor. Vulputate dignissim suspendisse in est ante in nibh mauris. Blandit libero volutpat sed cras ornare arcu dui vivamus. Ut diam quam nulla porttitor massa id. Arcu felis bibendum ut tristique et egestas. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae.
-
-                    Dui sapien eget mi proin sed libero enim sed. Sed risus pretium quam vulputate dignissim suspendisse in. Et malesuada fames ac turpis egestas maecenas pharetra. Quam quisque id diam vel quam elementum. Quis eleifend quam adipiscing vitae proin. Sit amet massa vitae tortor condimentum. </textarea>
+            <form th:action="@{/entry/save}" method="post">
+                <input type="hidden" name="id" th:value="${post.getId()}">
+                <input type="hidden" name="title" th:value="${post.getTitle()}">
+                <input type="hidden" name="postDate" th:value="${post.getPostDate()}">
+                <input type="hidden" name="coverPicture" th:value="${post.getCoverPicture()}">
+                <input type="hidden" name="user" th:value="${post.getUser().getId()}">
+                <div class="editor-container">
+                    <textarea name="body" th:text="${post.getBody()}" id="summernote"></textarea>
+                </div>
                 <div class="buttons">
                     <input class="btn btn-primary" type="submit" value="Guardar cambios">
                 </div>
