@@ -2,6 +2,8 @@ package com.ufro.BlogPersonal.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 @Entity
 public class Post {
@@ -58,6 +60,12 @@ public class Post {
 
     public Timestamp getPostDate() {
         return postDate;
+    }
+
+    public String getFormatDate() {
+        return DateFormat
+                .getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT)
+                .format(getPostDate());
     }
 
     public void setPostDate(Timestamp postDate) {

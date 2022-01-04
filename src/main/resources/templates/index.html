@@ -45,7 +45,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Titulo entrada</h5>
                     <p class="card-text">Descripción de la entrada personalizada</p>
-                    <a href="/entrada.html" class="btn btn-primary">Ir a la entrada</a>
+                    <!-- Hardcode -->
+                    <a th:href="@{/entry(id=1)}" class="btn btn-primary">Ir a la entrada</a>
                 </div>
             </div>
 
@@ -79,7 +80,7 @@
                 </div>
             </div>
 
-        
+
     </main>
 
     <footer>
