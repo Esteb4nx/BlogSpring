@@ -39,7 +39,6 @@
         <h1>Entradas recientes</h1>
 
         <div class="cards">
-
             <div th:if="${posts == null}">
                 No hay publicaciones
             </div>
@@ -47,16 +46,13 @@
                 <img th:src="${post.getCoverPicture()}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${post.getTitle()}">Titulo entrada</h5>
-                    <!-- Hardcode -->
                     <a th:href="@{/entry(id=${post.getId()})}" class="btn btn-primary">Ir a la entrada</a>
                 </div>
             </div>
-
-
+        </div>
     </main>
 
     <footer>
-
     </footer>
 </body>
 </html>

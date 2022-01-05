@@ -1,8 +1,3 @@
-/*
- *  @author Jorge M.
- *  04-01-2022
- */
-
 package com.ufro.BlogPersonal.controller;
 
 import com.ufro.BlogPersonal.model.Post;
