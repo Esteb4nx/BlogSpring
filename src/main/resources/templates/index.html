@@ -36,6 +36,12 @@
     </header>
 
     <main class="main-container">
+
+        <div th:if="${param.deleted != null}" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Entrada eliminada correctamente</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
         <h1>Entradas recientes</h1>
 
         <div class="cards">

@@ -46,6 +46,7 @@ public class EntryController {
         return "redirect:/entry?id=" + post.getId();
     }
 
+    // new entry related mappings
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("post", new Post());
@@ -64,6 +65,13 @@ public class EntryController {
         post.setAuthor(author.orElseThrow());
         postRepository.save(post);
         return "redirect:/entry?id=" + post.getId();
+    }
+
+    // delete entry mapping
+    @RequestMapping("/delete")
+    public String delete(@RequestParam(value = "id") Long id) {
+        postRepository.deleteById(id);
+        return "redirect:/?deleted";
     }
 
 }
