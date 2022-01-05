@@ -39,44 +39,16 @@
         <h1>Entradas recientes</h1>
 
         <div class="cards">
-            <div class="card" style="width: 18rem;">
-                <img src="https://placekitten.com/640/360
-                        " class="card-img-top" alt="...">
+
+            <div th:if="${posts == null}">
+                No hay publicaciones
+            </div>
+            <div th:if="${posts != null}" th:each="post : ${posts}" class="card" style="width: 18rem;">
+                <img th:src="${post.getCoverPicture()}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Titulo entrada</h5>
-                    <p class="card-text">Descripción de la entrada personalizada</p>
+                    <h5 class="card-title" th:text="${post.getTitle()}">Titulo entrada</h5>
                     <!-- Hardcode -->
-                    <a th:href="@{/entry(id=1)}" class="btn btn-primary">Ir a la entrada</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="https://placekitten.com/640/360
-                        " class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Titulo entrada</h5>
-                    <p class="card-text">Descripción de la entrada personalizada</p>
-                    <a href="/entrada.html" class="btn btn-primary">Ir a la entrada</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="https://placekitten.com/640/360
-                        " class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Titulo entrada</h5>
-                    <p class="card-text">Descripción de la entrada personalizada</p>
-                    <a href="/entrada.html" class="btn btn-primary">Ir a la entrada</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="https://placekitten.com/640/360
-                        " class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Titulo entrada</h5>
-                    <p class="card-text">Descripción de la entrada personalizada</p>
-                    <a href="/entrada.html" class="btn btn-primary">Ir a la entrada</a>
+                    <a th:href="@{/entry(id=${post.getId()})}" class="btn btn-primary">Ir a la entrada</a>
                 </div>
             </div>
 
