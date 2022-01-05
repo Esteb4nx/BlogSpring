@@ -3,7 +3,6 @@ package com.ufro.BlogPersonal.model;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 @Entity
 public class Post {
@@ -29,25 +28,25 @@ public class Post {
     // FIXME: hibernate ddl log WARN`s: Error executing DDL "alter table post drop foreign key if exists FK12..." via JDBC Statement
     @ManyToOne(optional = false)
     @JoinColumn(name = "author_id", nullable = false)
-    private User user;
+    private User author;
 
     public Post() {
     }
 
-    public Post(Long id, String title, String body, Timestamp postDate, User user) {
+    public Post(Long id, String title, String body, Timestamp postDate, User author) {
         this.id = id;
         this.title = title;
         this.body = body;
         this.postDate = postDate;
-        this.user = user;
+        this.author = author;
     }
 
-    public User getUser() {
-        return user;
+    public User getAuthor() {
+        return author;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setAuthor(User user) {
+        this.author = user;
     }
 
     public String getCoverPicture() {
