@@ -64,7 +64,7 @@
                 <input type="hidden" name="title" th:value="${post.getTitle()}">
                 <input type="hidden" name="postDate" th:value="${post.getPostDate()}">
                 <input type="hidden" name="coverPicture" th:value="${post.getCoverPicture()}">
-                <input type="hidden" name="user" th:value="${post.getAuthor().getId()}">
+                <input type="hidden" name="author" th:value="${post.getAuthor().getId()}">
                 <div class="editor-container">
                     <textarea name="body" th:text="${post.getBody()}" id="summernote"></textarea>
                 </div>
