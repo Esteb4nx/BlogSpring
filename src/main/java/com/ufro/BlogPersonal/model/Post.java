@@ -3,6 +3,8 @@ package com.ufro.BlogPersonal.model;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.util.Locale;
+import java.util.TimeZone;
 
 @Entity
 public class Post {
@@ -63,7 +65,10 @@ public class Post {
 
     public String getFormatDate() {
         return DateFormat
-                .getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT)
+                // obtiene una instancia de fecha y hora actual con los formatos dados y en el formato de Locale (es CL)
+                .getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT, new Locale("es", "CL"))
+                // Locale generalmente no es necesario, se agrega en caso de que el sistema que ejecuta la aplicación
+                // tenga un lenguaje y país distinto al deseado (inglés p.ej.)
                 .format(getPostDate());
     }
 
