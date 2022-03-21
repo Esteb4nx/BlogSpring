@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.util.Locale;
-import java.util.TimeZone;
 
 @Entity
 public class Post {
