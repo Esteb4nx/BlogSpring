@@ -1,23 +1,34 @@
 # BlogSpring
-Manual para crear una aplicación web completa con Spring Boot
+Repositorio parte de manual para crear una aplicación web con Spring Boot  
+[Manual en Google documents](https://docs.google.com/document/d/14R3bzpxyt1hvk5RAUiuUcfyuXMV9EyBAjrEw2YHdd9c/edit?usp=sharing)
 
-Introducción - Etapa 1
-   - ¿Qué es SpringBoot? ¿Cómo funciona? ¿Cómo crear un proyecto? y crear un repositorio.
+### Requerimientos:  
+ - Maven 3.2+
+ - OpenJDK/JDK 17 o superior
+ - Servidor local o remoto de MariaDB/MySQL
 
-Creación de modelos - Etapa 2
-   - Crear las entidades de la base de datos en el proyecto con DDL Automatico.
+### Instalación:
+Antes de instalar:  
+ 1. Debes tener creada la base de datos `blogspring`, no es necesario crear el schema previamente dado que se utiliza DDL automático
 
-Conexión con la base de datos - Etapa 3
-   - Creación de servicios y repositorios.
+ 2. Tener disponible y en ejecución servicio MariaDB/MySQL, puedes modificar las configuraciones de la aplicación y 
+ ajustarla a tu entorno o usuario en el archivo 
+ [application.properties](https://github.com/Esteb4nx/BlogSpring/blob/main/src/main/resources/application.properties)
+ 
+Asegurados los pasos 1 y 2 de la etapa anterior:
 
-Crear las vistas - Etapa 4
-   - Introducción a Bootstrap 5 y Texto enriquezido (Libreria Summernote)
+ - En la carpeta raíz del repositorio ejecutar: `mvn clean package`
+   - Esto ejecutará las pruebas unitarias y creará el archivo `BlogPersonal-0.0.1-SNAPSHOT.jar` que será nuestra app 
 
-Creación de rutas - Etapa 5
-   - Configuración de controladores basicos.
+ - Luego ejecutar `.jar` con: `java -jar target/BlogPersonal-0.0.1-SNAPSHOT.jar`
+ 
+Si todo resultó correcto la aplicación BlogSpring se encuentra disponible en [localhost:8080](http://localhost:8080)
 
-Implementar un CRUD - Etapa 6
-   - Integrar fontend y backend.
+---
+Creado por:
+[Esteb4nx](https://github.com/Esteb4nx/) y [jmainhard](https://github.com/jmainhard) como parte de un material didáctico
 
-Implementar un Login - Etapa 7
-   - Uso de SpringSecurity.
+
+
+
+
