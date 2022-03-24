@@ -1,5 +1,7 @@
 # BlogSpring
-BlogSpring es un repositorio que se utiliza para la redacción de un manual con enfoque a la construcción de una aplicación básica de CRUD, se basa en el funcionamiento de un blog personal.
+BlogSpring es un repositorio que se utiliza para la redacción de un manual con enfoque a la construcción de una aplicación básica de CRUD.
+
+La aplicación se basa en el funcionamiento de un blog personal.
 
 ### Requerimientos:  
  - Maven 3.2+
