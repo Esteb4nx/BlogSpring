@@ -1,6 +1,5 @@
 # BlogSpring
-Repositorio parte de manual para crear una aplicación web con Spring Boot  
-[Manual en Google documents](https://docs.google.com/document/d/14R3bzpxyt1hvk5RAUiuUcfyuXMV9EyBAjrEw2YHdd9c/edit?usp=sharing)
+BlogSpring es un repositorio que se utiliza para la redacción de un manual con enfoque a la construcción de una aplicación básica de CRUD, se basa en el funcionamiento de un blog personal.
 
 ### Requerimientos:  
  - Maven 3.2+
@@ -26,9 +25,4 @@ Si todo resultó correcto la aplicación BlogSpring se encuentra disponible en [
 
 ---
 Creado por:
-[Esteb4nx](https://github.com/Esteb4nx/) y [jmainhard](https://github.com/jmainhard) como parte de un material didáctico
-
-
-
-
-
+[Esteb4nx](https://github.com/Esteb4nx/) y [jmainhard](https://github.com/jmainhard) como apoyo en la creación de material didáctico
